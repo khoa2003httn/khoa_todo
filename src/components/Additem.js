@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ItemContext } from './ItemContext';
 function Additem() {
@@ -11,8 +11,8 @@ function Additem() {
     const navigate = useNavigate();
 
     const { items, setItems } = React.useContext(ItemContext);
-    console.log('>>>items',items);
-    console.log('>>>setItems',setItems);
+    console.log('>>>items', items);
+    console.log('>>>setItems', setItems);
     const inputTextHandler = (e) => {
         const { name, value } = e.target;
         if (name === 'name') setName(value);
@@ -27,10 +27,10 @@ function Additem() {
 
     const submitHandler = () => {
         if (name.trim() && email.trim() && phone.trim()) {
-            // console.log({ name, email, phone, image });
-            setItems([...items  ,{ name, email, phone, image }]);
+            const imageUrl = URL.createObjectURL(image); // Tạo URL từ tệp hình ảnh
+            setItems([...items, { name, email, phone, image: imageUrl }]);
 
-                navigate('/', );
+            // navigate('null',);
         } else {
             console.log('Please fill in all fields');
         }
@@ -84,11 +84,10 @@ function Additem() {
                     ADD
                 </button>
                 {/* khoang trang */}
-             
+
             </div>
         </div>
     );
 }
 
 export default Additem;
-                    

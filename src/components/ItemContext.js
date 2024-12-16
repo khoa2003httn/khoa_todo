@@ -4,8 +4,8 @@ export const ItemContext = createContext();
 
 export const ItemProvider = ({ children }) => {
   const [items, setItems] = useState([
-]);
-console.log(ItemProvider);
+  ]);
+  console.log(ItemProvider);
   return (
     <ItemContext.Provider value={{ items, setItems }}>
       {children}
