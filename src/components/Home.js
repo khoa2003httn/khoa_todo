@@ -8,6 +8,7 @@ function Home() {
 
     return (
         <>
+          <h1>Home</h1>
           <ul>
             {items.map((item) => (
               <li key={item.name}>
